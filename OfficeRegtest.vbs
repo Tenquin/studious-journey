@@ -1,7 +1,7 @@
 '================ VARS ======================
 'Product Code for Office required for activation
-OffProdID = "NH3P2-CGFW2-Q7JXH-BGDYM-QJYG7" 
-'OffActID = "018184003642301279885983275056223345296962059091298802410647921" 'don't think this is needed
+OffProdID = "XXXX-XXXX-XXXX-XXXX" 
+'OffActID = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" 'don't think this is needed
 OfficeTXT = "c:\OfficeIDs\confid.txt"
 Serial = MBSerial()
 confID = GetConfID()
