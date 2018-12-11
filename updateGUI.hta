@@ -1,0 +1,100 @@
+﻿<html>
+<head>
+	<title>EFEC ECP 007</title>
+	<HTA:APPLICATION
+		ID="EFECSETUP" 
+		APPLICATIONNAME="EFEC ECP 007"
+		SCROLL="no"
+		CAPTION="no"
+		MaximizeButton="no"
+		MinimizeButton="no"
+		SINGLEINSTANCE="yes"
+		WINDOWSTATE="maximize"
+		BORDER="thin"
+		Contextmenu="no"
+	>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="hta/style.css">
+</head>
+
+<!-- VBScript file sets. funcLib must load first followed by init-->
+	<!-- General Function Library for utility functionality.  -->
+		<script language="VBScript" src="hta/funcLib.vbs" type="text/VBScript"></script>
+	<!-- init is for intializing global & enviromental variables as well as setting first load state of DOM -->
+		<script language="VBScript" src="hta/init.vbs" type="text/VBScript"></script>
+	<!-- Sub tasks or button tasks specific to this app -->
+		<script language="VBScript" src="hta/tasks.vbs" type="text/VBScript"></script>
+	<!-- Main refresh loop. runs via timer loop. Just a state managed select case. This moves the app from state to state -->
+		<script language="VBScript" src="hta/main.vbs" type="text/VBScript"></script>
+
+<!-- Kick off timer loop which runs in the main.vbs-->
+	<script language="VBScript">
+		iTimerID = window.setInterval("RefreshList", 1000)
+	</script>
+
+<body>
+	<!-- PageTile span -->
+	<span id = "PageTitle" class="textvalignmiddle"><span>Expeditionary Forensics Exploitation Capability</span></span>
+
+	<!-- image files -->
+	<img id="gear1" class="logo" src="bin/images/gear.png" />
+	<img id="gear2" class="logo" src="bin/images/gear.png" />
+
+	<!-- Buttons -->	
+
+	<!-- TM Items List -->
+		<span ID="TMSpan" class="TaskSpan">Transaction Manager Tasks
+			<table id = "TMTable" class="TaskTable">
+				<tbody>
+				<tr class="TableRow1">
+					<th style="width:0%;">Status</th>
+					<th>TASK</th>
+				</tr>
+				<tr>
+					<td ><img id="taskTMimg0" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM0">Setting Time Zone to UTC</span></td>
+				</tr>
+				<tr>
+					<td  ><img id="taskTMimg1" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM1">Registering OSForensics</span></td>
+				</tr>
+				<tr>
+					<td><img id="taskTMimg2" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM2">Setting Computer Name </span></td>
+				</tr>
+				<tr>
+					<td><img id="taskTMimg3" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM3">Setting Background Image</span></td>
+				</tr>
+				<tr>
+					<td><img id="taskTMimg4" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM4">Activating Windows</span></td>
+				</tr>
+				<tr>
+					<td><img id="taskTMimg5" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM5">Activating Office</span></td>
+				</tr>
+				<tr>
+					<td><img id="taskTMimg6" src="bin/images/start.png" class="lineImage"></td>
+					<td><span id="taskTM6">Importing Registry Keys</span></td>
+				</tr>
+				</tbody>
+			</table>
+		</span>
+
+
+	<!-- logSpan for text box update -->
+	<span id="logSpan">
+		<textarea name="logDump" id="logtext" cols="120" rows="4" class="log"></textarea>
+	</span>
+
+	<!-- Init Message -->
+	<span id = "InitSpan">...</span>
+	
+	<!-- ProcessList span. Main message text -->
+	<span id ="ProcessList">Please wait. Checking System Status...</span>
+	
+
+</body>
+</html>
